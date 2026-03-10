@@ -142,7 +142,7 @@ fun CameraEntryScreen() {
                 overlayView = overlayView,
                 onPhotoSaved = {
                     scope.launch {
-                        snackbarHostState.showSnackbar("사진이 저장되었습니다 📸")
+                        snackbarHostState.showSnackbar("사진이 저장되었습니다")
                     }
                 }
             )
@@ -190,7 +190,7 @@ fun OverlayLayer(
                     context = context,
                     imageCapture = imageCapture,
                     overlayView = overlayView,
-                    onSaved = onPhotoSaved   // 👈 전달
+                    onSaved = onPhotoSaved
                 )
             }
         ) {
@@ -250,7 +250,7 @@ fun takePhotoWithOverlay(
 
                 saveBitmapToGallery(context, result)
 
-                onSaved()   // ✅ 여기서 알림
+                onSaved()   
                 image.close()
             }
         }
